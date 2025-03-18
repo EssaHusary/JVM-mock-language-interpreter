@@ -6,6 +6,8 @@ import interpreter.loaders.InvalidProgramException;
 import interpreter.virtualmachine.Program;
 import interpreter.virtualmachine.VirtualMachine;
 
+import java.util.Scanner;
+
 /**
  * <pre>
  *     Interpreter class runs the interpreter:
@@ -48,6 +50,10 @@ public class Interpreter {
             System.out.println("***Incorrect usage, try: java interpreter.Interpreter <file>");
             System.exit(1);
         }
-        (new Interpreter(args[0])).run();
+
+        System.out.println("Please enter program file name: ");
+        Scanner sc = new Scanner(System.in);
+        String programChoice = sc.nextLine();
+        (new Interpreter(programChoice)).run();
     }
 }
